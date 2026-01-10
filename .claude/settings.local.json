@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm --version:*)",
+      "Bash(node --version:*)",
+      "Bash(source ~/.nvm/nvm.sh)",
+      "Bash(pnpm install)",
+      "Bash(nvm use:*)",
+      "Bash(pnpm build:*)",
+      "Bash(timeout 10 pnpm dev:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(pnpm add:*)"
+    ]
+  }
+}
