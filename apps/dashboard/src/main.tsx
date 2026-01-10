@@ -4,6 +4,13 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 import './index.css'
 
+// Handle GitHub Pages SPA routing redirect from 404.html
+const redirect = sessionStorage.getItem('redirect')
+if (redirect) {
+  sessionStorage.removeItem('redirect')
+  history.replaceState(null, '', redirect)
+}
+
 const router = createRouter({ routeTree })
 
 declare module '@tanstack/react-router' {
