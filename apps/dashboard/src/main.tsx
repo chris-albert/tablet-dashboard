@@ -11,7 +11,10 @@ if (redirect) {
   history.replaceState(null, '', redirect)
 }
 
-const router = createRouter({ routeTree })
+const router = createRouter({
+  routeTree,
+  basepath: '/tablet-dashboard'
+})
 
 declare module '@tanstack/react-router' {
   interface Register {
