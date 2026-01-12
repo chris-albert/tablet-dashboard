@@ -13,6 +13,7 @@ export default function WeatherInfo() {
   const [forecast, setForecast] = useState<WeatherDay[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [currentTime, setCurrentTime] = useState(new Date())
 
   const fetchWeatherData = async () => {
     try {
@@ -74,6 +75,13 @@ export default function WeatherInfo() {
   useEffect(() => {
     fetchWeatherData()
     const interval = setInterval(fetchWeatherData, 600000) // Update every 10 minutes
+    return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date())
+    }, 1000) // Update every second
     return () => clearInterval(interval)
   }, [])
 
@@ -139,6 +147,24 @@ export default function WeatherInfo() {
       {!loading && forecast.length === 0 && !error && (
         <p className="text-gray-500">No forecast data available</p>
       )}
+
+      <div className="mt-6 pt-4 border-t border-gray-300 dark:border-gray-600 text-center">
+        <p className="text-2xl font-semibold">
+          {currentTime.toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </p>
+        <p className="text-4xl font-bold mt-2 tabular-nums">
+          {currentTime.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+          })}
+        </p>
+      </div>
     </div>
   )
 }
