@@ -217,7 +217,7 @@ export default function TransitInfo() {
           <div className="flex justify-between items-center mb-3">
             <h3 className="text-xl font-medium flex items-center">
               <span className="bg-green-600 text-white px-2 py-1 rounded mr-2 text-sm">29</span>
-              To Presidio
+              To Baker Beach
             </h3>
             <button
               onClick={() => setShowQRCode('29')}
