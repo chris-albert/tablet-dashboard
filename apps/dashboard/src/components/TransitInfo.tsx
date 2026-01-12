@@ -199,14 +199,14 @@ export default function TransitInfo() {
             </button>
           </div>
           {mLinePredictions.length > 0 ? (
-            <div className="bg-white dark:bg-gray-700 p-4 rounded">
-              <div className="flex gap-4 justify-center items-center">
-                {mLinePredictions.map((pred, idx) => (
-                  <span key={idx} className="text-3xl font-bold">
+            <div className="flex gap-3">
+              {mLinePredictions.map((pred, idx) => (
+                <div key={idx} className="flex-1 bg-white dark:bg-gray-700 p-4 rounded text-center">
+                  <span className="text-3xl font-bold">
                     {pred.minutes === 0 ? 'Arriving' : `${pred.minutes} min`}
                   </span>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           ) : (
             <p className="text-gray-500 text-sm">No predictions available</p>
@@ -228,14 +228,14 @@ export default function TransitInfo() {
             </button>
           </div>
           {bus29Predictions.length > 0 ? (
-            <div className="bg-white dark:bg-gray-700 p-4 rounded">
-              <div className="flex gap-4 justify-center items-center">
-                {bus29Predictions.map((pred, idx) => (
-                  <span key={idx} className="text-3xl font-bold">
+            <div className="flex gap-3">
+              {bus29Predictions.map((pred, idx) => (
+                <div key={idx} className="flex-1 bg-white dark:bg-gray-700 p-4 rounded text-center">
+                  <span className="text-3xl font-bold">
                     {pred.minutes === 0 ? 'Arriving' : `${pred.minutes} min`}
                   </span>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           ) : (
             <p className="text-gray-500 text-sm">No predictions available</p>
