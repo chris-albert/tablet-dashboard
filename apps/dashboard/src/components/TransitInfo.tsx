@@ -273,7 +273,7 @@ export default function TransitInfo() {
                 value={
                   showQRCode === 'M'
                     ? 'https://www.sfmta.com/stops/19th-ave-winston-dr-stonestown-17449'
-                    : 'https://www.sfmta.com/stops/winston-dr-20th-ave-16951'
+                    : 'https://www.sfmta.com/stops/winston-dr-20th-ave-16950'
                 }
                 size={256}
                 level="H"
